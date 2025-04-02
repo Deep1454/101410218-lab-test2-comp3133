@@ -2,8 +2,11 @@
     "version": 2,
     "builds": [
       {
-        "src": "dist/1012355-lab-test2-comp3133/index.html",
-        "use": "@vercel/static"
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "dist/1012355-lab-test2-comp3133"
+        }
       }
     ],
     "routes": [
