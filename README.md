@@ -4,7 +4,7 @@ This App contains an Angular project, showcasing SpaceX mission data with filter
 
 ## Live Demo
 Check out the live application:  
-[https://one01410218-lab-test2-comp3133.onrender.com](https://one01410218-lab-test2-comp3133.onrender.com/mission/4)
+[https://one01410218-lab-test2-comp3133.onrender.com](https://one01410218-lab-test2-comp3133.onrender.com)
 
 ## Project Overview
 - **API Used**: SpaceX API (https://api.spacexdata.com/v4/launches) for fetching mission data
