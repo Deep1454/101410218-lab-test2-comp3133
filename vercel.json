@@ -5,7 +5,7 @@
         "src": "package.json",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "dist/1012355-lab-test2-comp3133"
+          "distDir": "dist/101410218LabTest2Comp3133"
         }
       }
     ],
