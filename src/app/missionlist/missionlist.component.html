@@ -1,1 +1,23 @@
-<p>missionlist works!</p>
+<div class="container">
+    <app-missionfilter
+      (filterChange)="applyFilters($event)"
+      (resetFilters)="resetFilters()"
+    ></app-missionfilter>
+  
+    <mat-card class="mission-list">
+      <mat-list>
+        <mat-list-item *ngFor="let mission of filteredMissions">
+          <a [routerLink]="['/mission', mission.flight_number]">
+            <img
+              [src]="mission.links.mission_patch_small"
+              alt="Mission Patch"
+              width="50"
+            />
+            <h3>{{ mission.mission_name }}</h3>
+            <p>{{ mission.launch_year }}</p>
+            <p>{{ mission.details }}</p>
+          </a>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+  </div>

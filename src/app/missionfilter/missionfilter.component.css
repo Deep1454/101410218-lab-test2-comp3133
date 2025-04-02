@@ -1,0 +1,16 @@
+.filter-container {
+    padding: 20px;
+  }
+  
+  mat-form-field {
+    width: 200px;
+    margin-right: 20px;
+  }
+  
+  button {
+    margin: 10px 5px;
+  }
+  
+  h4 {
+    margin: 10px 0 5px;
+  }

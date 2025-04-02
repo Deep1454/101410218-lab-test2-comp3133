@@ -1,1 +1,18 @@
-<p>missiondetails works!</p>
+<mat-card *ngIf="mission" class="mission-details">
+    <img [src]="mission.links.mission_patch_small" alt="Mission Patch" width="100" />
+    <h2>Mission - {{ mission.mission_name }}</h2>
+    <mat-card-content>
+      <p><strong>Name:</strong> {{ mission.mission_name }}</p>
+      <p><strong>Launch Year:</strong> {{ mission.launch_year }}</p>
+  
+      <h3>Rocket</h3>
+      <p><strong>Name:</strong> {{ mission.rocket.rocket_name }}</p>
+      <p><strong>Type:</strong> {{ mission.rocket.rocket_type }}</p>
+  
+      <h3>Launch Site</h3>
+      <p><strong>Name:</strong> {{ mission.launch_site.site_name }}</p>
+  
+      <h3>Launch Details</h3>
+      <p>{{ mission.details }}</p>
+    </mat-card-content>
+  </mat-card>
