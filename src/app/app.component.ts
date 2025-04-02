@@ -9,5 +9,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'COMP 3133 Lab Test2 SpaceX API';
+  title = 'SpaceX Mission Details';
 }

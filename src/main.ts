@@ -4,8 +4,9 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { MissionListComponent } from './app/missionlist/missionlist.component';
 import { MissionDetailsComponent } from './app/missiondetails/missiondetails.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
-// Define routes directly in main.ts
+
 const routes = [
   { path: '', component: MissionListComponent },
   { path: 'mission/:id', component: MissionDetailsComponent }
@@ -14,6 +15,7 @@ const routes = [
 bootstrapApplication(AppComponent, {
   providers: [
     provideHttpClient(),
-    provideRouter(routes)
+    provideRouter(routes),
+    provideAnimations()
   ]
 }).catch(err => console.error(err));

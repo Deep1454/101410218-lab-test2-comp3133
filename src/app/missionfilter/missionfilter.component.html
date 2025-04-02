@@ -1,26 +1,28 @@
 <div class="filter-container">
-    <h3>Mission List</h3>
-    <mat-form-field appearance="fill">
-      <mat-label>Filter by Launch Year</mat-label>
-      <input matInput [(ngModel)]="year" placeholder="e.g., 2020">
-    </mat-form-field>
-  
-    <div>
-      <h4>Launch</h4>
-      <mat-radio-group [(ngModel)]="launchSuccess">
-        <mat-radio-button value="true">Successful</mat-radio-button>
-        <mat-radio-button value="false">Failed</mat-radio-button>
-      </mat-radio-group>
-    </div>
-  
-    <div>
-      <h4>Landing</h4>
-      <mat-radio-group [(ngModel)]="landingSuccess">
-        <mat-radio-button value="true">Successful</mat-radio-button>
-        <mat-radio-button value="false">Failed</mat-radio-button>
-      </mat-radio-group>
-    </div>
-  
+  <h3>Mission List</h3>
+  <mat-form-field appearance="fill">
+    <mat-label>Filter by Launch Year</mat-label>
+    <input matInput [(ngModel)]="year" placeholder="e.g., 2020">
+  </mat-form-field>
+
+  <div>
+    <h4>Launch</h4>
+    <mat-radio-group [(ngModel)]="launchSuccess">
+      <mat-radio-button value="true">Successful</mat-radio-button>
+      <mat-radio-button value="false">Failed</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div>
+    <h4>Landing</h4>
+    <mat-radio-group [(ngModel)]="landingSuccess">
+      <mat-radio-button value="true">Successful</mat-radio-button>
+      <mat-radio-button value="false">Failed</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="button-group">
     <button mat-raised-button color="primary" (click)="onFilter()">Filter</button>
     <button mat-raised-button color="warn" (click)="onReset()">Reset Filters</button>
   </div>
+</div>

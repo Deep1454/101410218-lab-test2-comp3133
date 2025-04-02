@@ -1,23 +1,40 @@
 <div class="container">
+  <div class="filter-section">
     <app-missionfilter
       (filterChange)="applyFilters($event)"
       (resetFilters)="resetFilters()"
     ></app-missionfilter>
-  
-    <mat-card class="mission-list">
-      <mat-list>
-        <mat-list-item *ngFor="let mission of filteredMissions">
-          <a [routerLink]="['/mission', mission.flight_number]">
-            <img
-              [src]="mission.links.mission_patch_small"
-              alt="Mission Patch"
-              width="50"
-            />
+  </div>
+
+  <div class="mission-section">
+    <div *ngIf="loading" class="loading">
+      <p>Loading missions...</p>
+    </div>
+
+    <div *ngIf="error" class="error">
+      <p>{{ error }}</p>
+      <button mat-raised-button color="primary" (click)="loadMissions()">Retry</button>
+    </div>
+
+    <mat-card class="mission-list" *ngIf="!loading && !error">
+      <div class="mission-item" *ngFor="let mission of filteredMissions">
+        <a [routerLink]="['/mission', mission.flight_number]">
+          <img
+            [src]="mission.links.mission_patch_small"
+            alt="Mission Patch"
+            width="50"
+            *ngIf="mission.links.mission_patch_small"
+          />
+          <div class="mission-info">
             <h3>{{ mission.mission_name }}</h3>
             <p>{{ mission.launch_year }}</p>
-            <p>{{ mission.details }}</p>
-          </a>
-        </mat-list-item>
-      </mat-list>
+            <p>{{ mission.details || 'No details available' }}</p>
+          </div>
+        </a>
+      </div>
+      <div class="no-missions" *ngIf="filteredMissions.length === 0 && !loading">
+        <p>No missions match the selected filters.</p>
+      </div>
     </mat-card>
   </div>
+</div>
